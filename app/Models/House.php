@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property-read int id
  * @property int
- * @property User $user
  */
 class House extends Model
 {
@@ -21,9 +20,4 @@ class House extends Model
     ];
 
     public $timestamps = false;
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
 }
