@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @property-read int $id
@@ -25,4 +26,9 @@ class WindowSection extends Model
     ];
 
     public $timestamps = false;
+
+    public function rollerBlind(): HasOne
+    {
+        return $this->hasOne(RollerBlind::class);
+    }
 }
