@@ -15,7 +15,7 @@ class CreateRoomsTable extends Migration
 
             $table->foreignIdFor(House::class, 'house_id');
 
-            $table->foreign('house_id')
+            $table->foreign('house_id', 'fk_rooms_houses')
                 ->references('id')
                 ->on('houses');
 
