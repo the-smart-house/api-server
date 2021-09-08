@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\BlueprintHelper;
 use App\Models\Room;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Migrations\Migration;

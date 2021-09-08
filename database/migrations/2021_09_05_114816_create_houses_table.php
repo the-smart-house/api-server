@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\BlueprintHelper;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +14,10 @@ class CreateHousesTable extends Migration
             $table->id();
             $table->string('title'); //TODO: установить макс. длину
 
-            $table->foreignIdFor(User::class, 'user_id');
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users');
+            BlueprintHelper::foreignKeyWithConstraint(
+                $table,
+                User::class, 'user_id'
+            );
 
             $table->unique(['title', 'user_id']);
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\BlueprintHelper;
 use App\Models\House;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +14,10 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->string('title');
 
-            $table->foreignIdFor(House::class, 'house_id');
-
-            $table->foreign('house_id')
-                ->references('id')
-                ->on('houses');
+            BlueprintHelper::foreignKeyWithConstraint(
+                $table,
+                House::class, 'house_id'
+            );
 
             $table->unique(['title', 'house_id']);
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\BlueprintHelper;
 use App\Models\Window;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,11 +15,10 @@ class CreateWindowsSectionsTable extends Migration
             $table->id();
             $table->unsignedTinyInteger('number');
 
-            $table->foreignIdFor(Window::class, 'window_id');
-
-            $table->foreign('window_id')
-                ->references('id')
-                ->on('windows');
+            BlueprintHelper::foreignKeyWithConstraint(
+                $table,
+                Window::class, 'window_id'
+            );
 
             //У окна не может быть двух секций с одинаковым номером
             //(т.е. не может быть двух "первых" секций), поэтому устанавливаем

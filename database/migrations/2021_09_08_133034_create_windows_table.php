@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\BlueprintHelper;
 use App\Models\House;
 use App\Models\Room;
 use Illuminate\Database\Migrations\Migration;
@@ -14,11 +15,10 @@ class CreateWindowsTable extends Migration
             $table->id();
             $table->string('title');
 
-            $table->foreignIdFor(Room::class, 'room_id');
-
-            $table->foreign('room_id')
-                ->references('id')
-                ->on('rooms');
+            BlueprintHelper::foreignKeyWithConstraint(
+                $table,
+                Room::class, 'room_id'
+            );
 
             $table->unique(['title', 'room_id']);
         });

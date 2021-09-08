@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\BlueprintHelper;
 use App\Models\WindowSection;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +14,10 @@ class CreateWindowOpenersTable extends Migration
             $table->id();
             $table->boolean('is_open');
 
-            $table->foreignIdFor(WindowSection::class, 'window_section_id');
-
-            $table->foreign('window_section_id')
-                ->references('id')
-                ->on('windows_sections');
+            BlueprintHelper::foreignKeyWithConstraint(
+                $table,
+                WindowSection::class, 'window_section_id'
+            );
 
             //На одной секции может быть установлен максимум
             //один модуль открывания
