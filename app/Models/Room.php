@@ -4,27 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property-read int id
- * @property int
+ * @property-read int $id
+ * @property string $title
  * @mixin \Illuminate\Database\Query\Builder
  */
-class House extends Model
+class Room extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'title',
+        'house_id',
     ];
 
     public $timestamps = false;
 
-    public function rooms(): HasMany
+    public function windows(): HasMany
     {
-        return $this->hasMany(Room::class);
+        return $this->hasMany(Window::class);
     }
 }
