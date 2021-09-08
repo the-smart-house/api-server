@@ -31,4 +31,9 @@ class Room extends Model
     {
         return $this->hasMany(TemperatureSensor::class);
     }
+
+    public function waterLeakDetectors(): HasMany
+    {
+        return $this->hasMany(WaterLeakDetector::class);
+    }
 }
