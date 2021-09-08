@@ -15,16 +15,13 @@ class CreateWindowOpenersTable extends Migration
 
             $table->foreignIdFor(WindowSection::class, 'window_section_id');
 
-            $table->foreign('window_section_id', 'fk_window_openers_windows_sections')
+            $table->foreign('window_section_id')
                 ->references('id')
                 ->on('windows_sections');
 
             //На одной секции может быть установлен максимум
             //один модуль открывания
-            $table->unique(
-                ['window_section_id'],
-                'uq_window_openers_windows_sections'
-            );
+            $table->unique(['window_section_id']);
         });
     }
 

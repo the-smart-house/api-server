@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
 
             //Безопасная длина email - 256 символов (https://stackoverflow.com/a/1199238/12983861)
-            $table->string('email', 256)->unique('uq_users_email');
+            $table->string('email', 256)->unique();
 
             //Используем для хеширования паролей встроенную функцию password_hash()
             //с алгоритмом PASSWORD_BCRYPT. Длинна полученного хеша - 60 символов.

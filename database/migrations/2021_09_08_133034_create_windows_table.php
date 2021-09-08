@@ -16,11 +16,11 @@ class CreateWindowsTable extends Migration
 
             $table->foreignIdFor(Room::class, 'room_id');
 
-            $table->foreign('room_id', 'fk_windows_rooms')
+            $table->foreign('room_id')
                 ->references('id')
                 ->on('rooms');
 
-            $table->unique(['title', 'room_id'], 'uq_windows_title_room_id');
+            $table->unique(['title', 'room_id']);
         });
     }
 

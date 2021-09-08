@@ -16,7 +16,7 @@ class CreateWindowsSectionsTable extends Migration
 
             $table->foreignIdFor(Window::class, 'window_id');
 
-            $table->foreign('window_id', 'fk_windows_sections_windows')
+            $table->foreign('window_id')
                 ->references('id')
                 ->on('windows');
 
@@ -24,10 +24,7 @@ class CreateWindowsSectionsTable extends Migration
             //(т.е. не может быть двух "первых" секций), поэтому устанавливаем
             //ограничение на уникальность
 
-            $table->unique(
-                ['number', 'window_id'],
-                'uq_windows_sections_number_window_id'
-            );
+            $table->unique(['number', 'window_id']);
         });
     }
 

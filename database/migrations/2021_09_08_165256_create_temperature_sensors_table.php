@@ -15,14 +15,11 @@ class CreateTemperatureSensorsTable extends Migration
 
             $table->foreignIdFor(Room::class, 'room_id');
 
-            $table->foreign('room_id', 'fk_temperature_sensors_rooms')
+            $table->foreign('room_id')
                 ->references('id')
                 ->on('rooms');
 
-            $table->unique(
-                ['title', 'room_id'],
-                'uq_temperature_sensors_title_room_id'
-            );
+            $table->unique(['title', 'room_id']);
         });
     }
 

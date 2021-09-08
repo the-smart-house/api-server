@@ -15,15 +15,12 @@ class CreateRollerBlindsTable extends Migration
 
             $table->foreignIdFor(WindowSection::class, 'window_section_id');
 
-            $table->foreign('window_section_id', 'fk_roller_blinds_windows_sections')
+            $table->foreign('window_section_id')
                 ->references('id')
                 ->on('windows_sections');
 
             //На одной секции может быть максимум одна штора
-            $table->unique(
-                ['window_section_id'],
-                'uq_roller_blinds_window_section_id'
-            );
+            $table->unique(['window_section_id']);
         });
     }
 

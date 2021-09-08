@@ -15,11 +15,11 @@ class CreateRoomsTable extends Migration
 
             $table->foreignIdFor(House::class, 'house_id');
 
-            $table->foreign('house_id', 'fk_rooms_houses')
+            $table->foreign('house_id')
                 ->references('id')
                 ->on('houses');
 
-            $table->unique(['title', 'house_id'], 'uq_rooms_title_house_id');
+            $table->unique(['title', 'house_id']);
         });
     }
 
