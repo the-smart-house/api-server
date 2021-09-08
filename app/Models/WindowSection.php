@@ -31,4 +31,9 @@ class WindowSection extends Model
     {
         return $this->hasOne(RollerBlind::class);
     }
+
+    public function windowOpener(): HasOne
+    {
+        return $this->hasOne(WindowOpener::class);
+    }
 }
