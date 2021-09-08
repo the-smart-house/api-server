@@ -36,4 +36,9 @@ class Room extends Model
     {
         return $this->hasMany(WaterLeakDetector::class);
     }
+
+    public function powerOutlets(): HasMany
+    {
+        return $this->hasMany(PowerOutlet::class);
+    }
 }
