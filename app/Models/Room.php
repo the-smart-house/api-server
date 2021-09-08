@@ -41,4 +41,9 @@ class Room extends Model
     {
         return $this->hasMany(PowerOutlet::class);
     }
+
+    public function lightSwitches(): HasMany
+    {
+        return $this->hasMany(LightSwitch::class);
+    }
 }
