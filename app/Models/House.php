@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property-read int id
- * @property int
+ * @property string $title
  * @mixin \Illuminate\Database\Query\Builder
  */
 class House extends Model
