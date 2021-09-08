@@ -23,7 +23,6 @@ class CreateWindowsSectionsTable extends Migration
             //У окна не может быть двух секций с одинаковым номером
             //(т.е. не может быть двух "первых" секций), поэтому устанавливаем
             //ограничение на уникальность
-
             $table->unique(['number', 'window_id']);
         });
     }

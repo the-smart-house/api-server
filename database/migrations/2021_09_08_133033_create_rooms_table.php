@@ -18,8 +18,6 @@ class CreateRoomsTable extends Migration
                 $table,
                 House::class, 'house_id'
             );
-
-            $table->unique(['title', 'house_id']);
         });
     }
 

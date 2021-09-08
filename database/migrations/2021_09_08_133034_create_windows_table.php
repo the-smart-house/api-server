@@ -19,8 +19,6 @@ class CreateWindowsTable extends Migration
                 $table,
                 Room::class, 'room_id'
             );
-
-            $table->unique(['title', 'room_id']);
         });
     }
 

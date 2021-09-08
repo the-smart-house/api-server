@@ -18,8 +18,6 @@ class CreateHousesTable extends Migration
                 $table,
                 User::class, 'user_id'
             );
-
-            $table->unique(['title', 'user_id']);
         });
     }
 
