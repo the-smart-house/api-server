@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property-read int $id
  * @property string $title
- * @property boolean $is_on
+ * @property bool $is_on
  * @mixin \Illuminate\Database\Query\Builder
  */
 class LightSwitch extends Model

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property-read int $id
- * @property boolean is_open
+ * @property bool is_open
  * @mixin \Illuminate\Database\Query\Builder
  */
 class WindowOpener extends Model
