@@ -15,7 +15,7 @@ class CreateWindowsTable extends Migration
             $table->id();
             $table->string('title');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 Room::class, 'room_id'
             );

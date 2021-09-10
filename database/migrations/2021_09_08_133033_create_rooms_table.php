@@ -14,7 +14,7 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->string('title');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 House::class, 'house_id'
             );

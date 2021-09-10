@@ -14,7 +14,7 @@ class CreateWindowOpenersTable extends Migration
             $table->id();
             $table->boolean('is_open');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 WindowSection::class, 'window_section_id'
             );

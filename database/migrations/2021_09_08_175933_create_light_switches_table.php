@@ -15,7 +15,7 @@ class CreateLightSwitchesTable extends Migration
             $table->string('title');
             $table->boolean('is_on');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 Room::class, 'room_id'
             );

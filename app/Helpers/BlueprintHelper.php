@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 class BlueprintHelper extends Migration
 {
-    public static function foreignKeyWithConstraint(
+    public static function foreignIdWithConstraint(
         Blueprint $table,
         string $modelClass,
         string $columnName = null

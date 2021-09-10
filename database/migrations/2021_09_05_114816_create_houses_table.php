@@ -14,9 +14,10 @@ class CreateHousesTable extends Migration
             $table->id();
             $table->string('title'); //TODO: установить макс. длину
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
-                User::class, 'user_id'
+                User::class,
+                'user_id'
             );
         });
     }

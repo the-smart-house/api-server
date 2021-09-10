@@ -15,7 +15,7 @@ class CreateWindowsSectionsTable extends Migration
             $table->id();
             $table->unsignedTinyInteger('number');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 Window::class, 'window_id'
             );

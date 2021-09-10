@@ -14,7 +14,7 @@ class CreateRollerBlindsTable extends Migration
             $table->id();
             $table->unsignedTinyInteger('lowering_percent');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 WindowSection::class, 'window_section_id'
             );

@@ -15,7 +15,7 @@ class CreateWaterLeakDetectorsTable extends Migration
             $table->string('title');
             $table->boolean('is_active');
 
-            BlueprintHelper::foreignKeyWithConstraint(
+            BlueprintHelper::foreignIdWithConstraint(
                 $table,
                 Room::class, 'room_id'
             );
