@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property-read int $id
  * @property string $title
+ * @property bool $is_active
  * @mixin \Illuminate\Database\Query\Builder
  */
 class WaterLeakDetector extends Model
@@ -16,6 +17,7 @@ class WaterLeakDetector extends Model
 
     protected $fillable = [
         'title',
+        'is_active',
         'room_id',
     ];
 
